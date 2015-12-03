@@ -1,0 +1,23 @@
+<div class="header">
+  <h1>Teams</h1>
+</div>
+<%= link_to "Create team?", 'create' %>
+<br><br>
+<table class="pure-table pure-table-horizontal">
+  <tr>
+    <thead>
+      <th>Name</th>
+      <th>Founder</th>
+      <th>Description</th>
+    </thead>
+  </tr>
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr class='clickable-row' data-href='display_team?team_id=<%= team.id %>'>
+        <td><%= team.name %></td>
+        <td><%= "#{team.user.first_name} #{team.user.last_name}" %></td>
+        <td><%= team.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

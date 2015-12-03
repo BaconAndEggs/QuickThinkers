@@ -1,0 +1,21 @@
+<div class="header">
+  <h1>Topics</h1>
+</div>
+<%= link_to "Create topic?", 'create' %>
+<br><br>
+<table class="pure-table pure-table-horizontal">
+  <tr>
+    <thead>
+      <th>Team</th>
+      <th>Topic Name</th>
+    </thead>
+  </tr>
+  <tbody>
+    <% @topics.each do |topic| %>
+      <tr class='clickable-row' data-href='display_topic?topic_id=<%= topic.id %>'>
+        <td><%= topic.team %></td>
+        <td><%= topic.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

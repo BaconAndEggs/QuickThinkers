@@ -1,0 +1,12 @@
+<div class="header">
+    <h1>Create Team</h1>
+</div>
+<%= form_tag("save_new_team", method: "post") do %>
+  <%= label_tag(:team_name, "Team Name:") %>
+  <%= text_field_tag(:team_name) %>
+  <br>
+  <%= label_tag(:team_description, "Team Description:") %>
+  <%= text_field_tag(:team_description) %>
+  <br>
+  <%= submit_tag("Create") %>
+<% end %>

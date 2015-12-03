@@ -1,0 +1,9 @@
+<%= form_tag("save_profile", method: "post") do %>
+  <%= label_tag(:first_name, "First Name:") %>
+  <%= text_field_tag(:first_name, @user.first_name) %>
+  <br>
+  <%= label_tag(:last_name, "Last Name:") %>
+  <%= text_field_tag(:last_name, @user.last_name) %>
+  <br>
+  <%= submit_tag("Save") %>
+<% end %>

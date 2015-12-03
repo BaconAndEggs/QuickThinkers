@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quickthinkers</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A tool for efficient collaborative decision making.">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <div id="layout">
+    <a id="menuLink" class="menu-link" href="#menu">
+      <span></span>
+    </a> 
+   <div id="menu">
+     <div class="pure-menu">
+        <!-- <div class="pure-menu pure-menu-horizontal"> -->
+        <a class="pure-menu-heading" href="#">QuickThinkers</a>
+        <ul class="pure-menu-list">
+              <li class="pure-menu-item"><%= link_to "Home", { controller: "home", action: "index" }, class: "pure-menu-link" %></li>
+              <li class="pure-menu-item"><%= link_to "Teams", { controller: "teams", action: "index" }, class: "pure-menu-link" %></li>
+              <li class="pure-menu-item"><%= link_to "Topics", { controller: "home" }, class: "pure-menu-link" %></li>
+              <li class="pure-menu-item"><%= link_to "Profile", { controller: "profile", action: "update" }, class: "pure-menu-link" %></li>
+          </ul>
+        </div>
+      </div>
+    <div id="main">
+      <div class="content">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

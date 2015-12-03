@@ -1,0 +1,16 @@
+<h2><%= @team.name %></h2>
+
+<% if @team.description %>
+  Description:<br>
+  <%= @team.description %>
+  <br><br>
+<% end %>
+
+Team founder: <%= "#{@team.user.first_name} #{@team.user.last_name}" %>
+<br><br>
+Team members:
+<ul>
+  <% @team.user_team_memberships.each do |membership| %>
+    <li><%= "#{membership.user.first_name} #{membership.user.last_name}" %></li>
+  <% end %>
+</ul>
